@@ -115,3 +115,85 @@ from student
 group by city;
 select grade,count(name) from student group by grade;
 select city,avg(marks) from student group by city order by avg(marks);
+use collage;
+select * from student;
+select city from student where city = "pune";
+select city from student where city <>"pune";
+select marks from student where marks <50;
+select marks from student where marks <80 and marks>50;
+select marks from student where marks <90 or marks <50;
+select * from student where marks <90 and city="mumbai";
+select city from student where city not in ("mumbai");
+select * from student where city in("delhi");
+select marks from student where marks between 80 and 100;
+select * from student where city like("pune");
+select city from student where city = all(select city from student where );
+set sql_safe_updates=0;
+
+update student 
+set grade="O"
+where grade ="o";
+select * from student;
+update student 
+set marks=82
+where rollno=105;
+select * from student;
+update student 
+set city="pune"
+where name="farah";
+select * from student;
+update student 
+set city="Delhi"
+where name="farah";
+select * from student;
+select * from student limit 3;
+select * from student where marks>90 limit 3;
+select * from student where grade = "o" limit 1;
+select city from student group by city having city="delhi";
+select city,grades from student group by city order by city desc;
+
+select * from student 
+order by city limit 4;
+select city,count(name)
+from student 
+group by city;
+
+select  city,count(city)
+from student
+group by city 
+order by city;
+select city ,avg(marks)
+from student 
+group by city
+order by avg(marks);
+select sum(marks) from student ;
+select max(marks) from student;
+select city,name,count(rollno)
+from student 
+group by city,name
+having max(marks)>90;
+update student 
+set marks=marks+1;
+select * from student;
+alter table student 
+change column name full_name varchar(10) ;
+select * from student;
+alter table student 
+change full_name name varchar(30);
+use collage;
+alter table student 
+rename to stu;
+alter table stu 
+change marks score int not null;
+select * from stu;
+use collage;
+select * from student;
+select * from stu;
+drop table stu;
+
+
+
+
+
+
+
