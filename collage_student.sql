@@ -40,6 +40,14 @@ LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
 INSERT INTO `student` VALUES (101,'anil',79,'C','Pune'),(102,'bhumika',94,'O','Mumbai'),(103,'chetan',86,'B','Mumbai'),(104,'dhruv',97,'O','Delhi'),(105,'emanuel',83,'F','Delhi'),(106,'farah',83,'B','Delhi');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
+create table student(
+id int auto_increment primary key,
+name varchar(50) not null,
+point int );
+insert into student (name,point) values("balu",50);
+select * from student;
+
+
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
